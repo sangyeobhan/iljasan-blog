@@ -1,3 +1,11 @@
+/* CUSTOM FONTS */
+@font-face {
+  font-family: 'IntelOneMono';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
 /*
   CSS RESET
   https://www.joshwcomeau.com/css/custom-css-reset/
@@ -79,7 +87,7 @@ html {
 
 html {
   color: var(--color-text);
-  font-family: var(--font-family), sans-serif;
+  font-family: 'IntelOneMono', var(--font-family), sans-serif;
   letter-spacing: -0.03125em;
   background: var(--color-backdrop-highlight);
 }
