@@ -1,11 +1,21 @@
 .wrapper {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 1px;
   text-decoration: none;
   font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: -0.5px;
   transition: font-weight 400ms, transform 400ms;
   will-change: transform;
+}
+
+.logoImage {
+  display: block;
+}
+
+.logoText {
+  display: block;
 }
 
 @media (min-width: 35rem) {
