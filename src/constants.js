@@ -1,4 +1,4 @@
-export const BLOG_TITLE = 'Bits & Bytes';
+export const BLOG_TITLE = '일자산';
 
 export const LIGHT_COLORS = {
   '--color-text': 'hsl(0deg 0% 5%)',
