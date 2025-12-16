@@ -3,6 +3,14 @@ import path from 'path';
 import matter from 'gray-matter';
 import React from "react";
 
+function normalizeSlug(slug) {
+  try {
+    return decodeURIComponent(slug);
+  } catch {
+    return slug;
+  }
+}
+
 export async function getBlogPostList() {
   const fileNames = await readDirectory('/content');
 
@@ -28,8 +36,9 @@ export async function getBlogPostList() {
 
 export const loadBlogPost = React.cache(
     async function loadBlogPost(slug) {
+      const normalizedSlug = normalizeSlug(slug);
       const rawContent = await readFile(
-          `/content/${slug}.mdx`
+          `/content/${normalizedSlug}.mdx`
       );
 
       const {data: frontmatter, content} =
