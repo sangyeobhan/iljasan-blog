@@ -39,7 +39,7 @@ function RootLayout({children}) {
             style={theme === 'light' ? LIGHT_TOKENS : DARK_TOKENS}
         >
         <body>
-        <Header theme={theme}/>
+        <Header />
         <main>{children}</main>
         <Footer/>
         </body>
