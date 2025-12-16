@@ -31,6 +31,28 @@
   font-weight: 500;
 }
 
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.tag {
+  padding: 6px 14px;
+  border-radius: 4px;
+  background: var(--color-decorative-300);
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 200ms;
+}
+
+.tag:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
 @media (min-width: 35rem) {
   .content p {
     font-size: 1.25rem;

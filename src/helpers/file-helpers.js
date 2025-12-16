@@ -47,6 +47,45 @@ export const loadBlogPost = React.cache(
     }
 );
 
+export async function getAllTags() {
+  const posts = await getBlogPostList();
+  const tagSet = new Set();
+
+  posts.forEach(post => {
+    if (post.tags && Array.isArray(post.tags)) {
+      post.tags.forEach(tag => tagSet.add(tag));
+    }
+  });
+
+  return Array.from(tagSet).sort();
+}
+
+export async function getTagsWithCount() {
+  const posts = await getBlogPostList();
+  const tagMap = new Map();
+
+  posts.forEach(post => {
+    if (post.tags && Array.isArray(post.tags)) {
+      post.tags.forEach(tag => {
+        tagMap.set(tag, (tagMap.get(tag) || 0) + 1);
+      });
+    }
+  });
+
+  return Array.from(tagMap.entries())
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export async function getBlogPostsByTag(tag) {
+  const posts = await getBlogPostList();
+  return posts.filter(post =>
+    post.tags &&
+    Array.isArray(post.tags) &&
+    post.tags.includes(tag)
+  );
+}
+
 function readFile(localPath) {
   return fs.readFile(
       path.join(process.cwd(), localPath),

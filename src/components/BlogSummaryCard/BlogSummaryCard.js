@@ -8,6 +8,7 @@ function BlogSummaryCard({
   title,
   publishedOn,
   abstract,
+  tags,
 }) {
   const href = `/${slug}`;
   const date = new Date(publishedOn);
@@ -19,6 +20,20 @@ function BlogSummaryCard({
         {title}
       </Link>
       <time dateTime={publishedOn}>{humanizedDate}</time>
+
+      {tags && tags.length > 0 && (
+        <div className={styles.tags}>
+          {tags.map(tag => (
+            <Link
+              key={tag}
+              href={`/tags/${encodeURIComponent(tag)}`}
+              className={styles.tag}
+            >
+              #{tag}
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

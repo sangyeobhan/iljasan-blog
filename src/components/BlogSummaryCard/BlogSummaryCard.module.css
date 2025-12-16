@@ -23,3 +23,25 @@
   font-size: 1.125rem;
   color: var(--color-gray-700);
 }
+
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.tag {
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: var(--color-decorative-300);
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: all 200ms;
+}
+
+.tag:hover {
+  background: var(--color-primary);
+  color: white;
+}

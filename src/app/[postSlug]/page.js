@@ -29,6 +29,7 @@ async function BlogPost({params}) {
         <BlogHero
             title={frontmatter.title}
             publishedOn={frontmatter.publishedOn}
+            tags={frontmatter.tags}
         />
         <div className={styles.page}>
           <MDXRemote

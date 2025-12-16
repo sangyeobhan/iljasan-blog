@@ -1,0 +1,47 @@
+.pagination {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 48px;
+  flex-wrap: wrap;
+}
+
+.pagination a,
+.pagination span {
+  min-width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.pageLink,
+.navButton {
+  transition: all 200ms;
+  color: var(--color-text);
+}
+
+.pageLink:hover,
+.navButton:hover {
+  background: var(--color-decorative-300);
+}
+
+.currentPage {
+  background: var(--color-primary);
+  color: white;
+  font-weight: 600;
+}
+
+.ellipsis {
+  color: var(--color-text);
+  opacity: 0.5;
+}
+
+.navButton {
+  padding: 0 16px;
+  font-weight: 600;
+}

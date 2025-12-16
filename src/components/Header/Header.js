@@ -1,15 +1,12 @@
 import React from 'react';
 
-import Logo from '@/components/Logo';
+import HeaderClient from '@/components/HeaderClient';
+import { getTagsWithCount } from '@/helpers/file-helpers';
 
-import styles from './Header.module.css';
+async function Header() {
+  const tags = await getTagsWithCount();
 
-function Header() {
-  return (
-    <header className={styles.wrapper}>
-      <Logo />
-    </header>
-  );
+  return <HeaderClient tags={tags} />;
 }
 
 export default Header;
