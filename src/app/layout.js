@@ -2,7 +2,7 @@ import React from 'react';
 import {Spline_Sans_Mono, Work_Sans,} from 'next/font/google';
 import clsx from 'clsx';
 
-import {BLOG_TITLE, DARK_TOKENS, LIGHT_TOKENS} from '@/constants';
+import {BLOG_TITLE, TOKENS} from '@/constants';
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -28,15 +28,12 @@ export const metadata = {
 }
 
 function RootLayout({children}) {
-  const theme = 'light';
-
   return (
       <RespectMotionPreferences>
         <html
             lang="en"
             className={clsx(mainFont.variable, monoFont.variable)}
-            data-color-theme={theme}
-            style={theme === 'light' ? LIGHT_TOKENS : DARK_TOKENS}
+            style={TOKENS}
         >
         <body>
         <Header />

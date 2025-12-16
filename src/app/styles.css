@@ -15,16 +15,20 @@
 *::after {
   box-sizing: border-box;
 }
+
 * {
   margin: 0;
 }
+
 html {
   scrollbar-gutter: stable;
 }
+
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
+
 img,
 picture,
 video,
@@ -33,12 +37,14 @@ svg {
   display: block;
   max-width: 100%;
 }
+
 input,
 button,
 textarea,
 select {
   font: inherit;
 }
+
 p,
 h1,
 h2,
@@ -56,7 +62,7 @@ html {
   --viewport-padding: 16px;
   --header-height: 5rem;
   --trimmed-content-width: calc(
-    var(--content-width) - var(--viewport-padding) * 2
+      var(--content-width) - var(--viewport-padding) * 2
   );
 }
 
@@ -69,15 +75,15 @@ html {
 /* GLOBAL STYLES */
 ::selection {
   background-color: var(
-    --color-selection-background
+      --color-selection-background
   ) !important;
   color: var(--color-selection-text) !important;
   background-image: none !important;
   -webkit-text-fill-color: var(
-    --color-selection-text
+      --color-selection-text
   ) !important;
   -moz-text-fill-color: var(
-    --color-selection-text
+      --color-selection-text
   ) !important;
   background-image: none !important;
   background-clip: revert !important;
@@ -89,6 +95,7 @@ html {
   color: var(--color-text);
   font-family: 'IntelOneMono', var(--font-family), sans-serif;
   letter-spacing: -0.03125em;
+  word-spacing: -0.3em;
   background: var(--color-backdrop-highlight);
 }
 
@@ -109,11 +116,7 @@ body::before {
   left: 0;
   right: 0;
   height: 50vh;
-  background: linear-gradient(
-    to top,
-    var(--color-backdrop),
-    var(--color-backdrop-highlight)
-  );
+  background: var(--color-backdrop);
 }
 
 body > main {
@@ -124,29 +127,35 @@ body > main {
 em {
   font-style: italic;
 }
+
 code {
   font-family: var(--font-family-mono);
 }
+
 h1 {
   font-size: 1.75rem;
   font-weight: 650;
 }
+
 h2 {
   font-size: 1.5rem;
   margin-top: 2em;
   margin-bottom: 0.5em;
   font-weight: 600;
 }
+
 h3 {
   font-size: 1.25rem;
   margin-top: 2em;
   margin-bottom: 0.5em;
   font-weight: 500;
 }
+
 p {
   font-size: 1.25rem;
   margin-bottom: 1.5em;
 }
+
 p code {
   display: inline-block;
   font-size: 0.9em;
@@ -155,6 +164,7 @@ p code {
   margin: -0.25em -1px;
   border-radius: 3px;
 }
+
 a {
   color: currentColor;
   text-decoration-color: var(--color-primary);
@@ -163,9 +173,11 @@ a {
   font-weight: 500;
   transition: all 200ms;
 }
+
 a:hover {
   text-underline-offset: 0.175em;
 }
+
 button {
   padding: 0;
 }
@@ -178,6 +190,7 @@ button {
   h2 {
     font-size: 1.75rem;
   }
+
   h3 {
     font-size: 1.5rem;
   }

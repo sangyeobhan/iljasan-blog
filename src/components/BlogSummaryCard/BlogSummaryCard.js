@@ -1,8 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import { format } from 'date-fns';
-
-import Card from '@/components/Card';
 
 import styles from './BlogSummaryCard.module.css';
 
@@ -13,28 +10,16 @@ function BlogSummaryCard({
   abstract,
 }) {
   const href = `/${slug}`;
-  const humanizedDate = format(
-    new Date(publishedOn),
-    'MMMM do, yyyy'
-  );
+  const date = new Date(publishedOn);
+  const humanizedDate = `작성일: ${date.getFullYear()}년 ${date.getMonth() + 1}월 ${date.getDate()}일`;
 
   return (
-    <Card className={styles.wrapper}>
+    <div className={styles.wrapper}>
       <Link href={href} className={styles.title}>
         {title}
       </Link>
       <time dateTime={publishedOn}>{humanizedDate}</time>
-      <p>
-        {abstract}{' '}
-        <Link
-          href={href}
-          className={styles.continueReadingLink}
-        >
-          Continue reading{' '}
-          <span className={styles.arrow}>→</span>
-        </Link>
-      </p>
-    </Card>
+    </div>
   );
 }
 
